@@ -12,7 +12,7 @@ const Login = () => {
     const loginHandler = async(e)=>{
       e.preventDefault();
       try {
-        const response = await axios.post("http://localhost:8007/api/login",{
+        const response = await axios.post("https://online-auth-project.onrender.com/api/login",{
           email,
           password
         },

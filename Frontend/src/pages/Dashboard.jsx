@@ -23,7 +23,7 @@ const Dashboard = () => {
   greeting();
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:8007/api/getdata", {
+      const response = await axios.get("https://online-auth-project.onrender.com/api/getdata", {
         withCredentials: true,
       });
       setUser(response.data);
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const logoutHandler = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8007/api/logout",
+        "https://online-auth-project.onrender.com/api/logout",
         {},
         { withCredentials: true },
       );

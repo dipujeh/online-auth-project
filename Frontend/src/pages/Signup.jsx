@@ -32,7 +32,7 @@ const Signup = () => {
           formData.append("profileImg",backendImg)
           
       const response = await axios.post(
-        "http://localhost:8007/api/signup",
+        "https://online-auth-project.onrender.com/api/signup",
         formData,
         { withCredentials: true },
       );
