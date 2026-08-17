@@ -92,6 +92,15 @@ const Dashboard = () => {
         </div>
       </div>
 
+       <div className="w-40 h-40 relative border rounded-full flex justify-center items-center overflow-hidden">
+            <img
+              src={user.profileImg}
+              alt="user"
+              className="w-full h-full object-cover cursor-pointer"
+            />
+            
+          </div>
+
       <div>
         <h1 className="text-center text-4xl font-bold">
           {greeting()},{" "}
