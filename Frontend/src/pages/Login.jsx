@@ -9,8 +9,11 @@ const Login = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
+    const [loder,setLoder] = useState(false);
+
     const loginHandler = async(e)=>{
       e.preventDefault();
+      setLoder(true);
       try {
         const response = await axios.post("https://online-auth-project.onrender.com/api/login",{
           email,
@@ -23,6 +26,8 @@ const Login = () => {
         
       } catch (error) {
         toast.error(error.response?.data?.message);
+      }finally{
+        setLoder(false)
       }
     }
 
@@ -58,7 +63,7 @@ const Login = () => {
           type="submit"
           className="bg-amber-200 py-4 cursor-pointer rounded-lg"
         >
-          Login
+          {loder?"Loggin in...":"Login"}
         </button>
         <p className="text-center">
           Does't have an account?

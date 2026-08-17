@@ -10,6 +10,7 @@ import user from "../assets/dp.jpg";
 const Signup = () => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
+  const [loader,setLoader] = useState(false)
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,6 +23,7 @@ const Signup = () => {
 
   const singupHandler = async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
           const formData = new FormData();
           formData.append("firstName",firstName)
@@ -48,6 +50,8 @@ const Signup = () => {
       navigate("/login");
     } catch (error) {
       toast.error(error.response.data.message);
+    }finally{
+      setLoader(false)
     }
   };
 
@@ -139,7 +143,7 @@ const Signup = () => {
           type="submit"
           className="bg-amber-200 py-4 cursor-pointer rounded-lg"
         >
-          Signup
+          {loader?"Creating Account...":"Signup"}
         </button>
         <p className="text-center">
           Already have an account?
