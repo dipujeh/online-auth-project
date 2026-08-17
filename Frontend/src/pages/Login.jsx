@@ -18,7 +18,7 @@ const Login = () => {
         },
         {withCredentials:true}
       )
-       toast.success(response.data.message);
+       toast.success(response?.data?.message);
        navigate('/dashboard');
         
       } catch (error) {
