@@ -92,14 +92,14 @@ const Dashboard = () => {
         </div>
       </div>
 
-       <div className="w-40 h-40 relative border rounded-full flex justify-center items-center overflow-hidden">
-            <img
-              src={user.profileImg}
-              alt="user"
-              className="w-full h-full object-cover cursor-pointer"
-            />
-            
-          </div>
+      <div className="w-full flex flex-col gap-2 justify-center items-center">
+        <div className="w-50 h-50 relative border rounded-full flex justify-center items-center overflow-hidden">
+        <img
+          src={user.profileImg}
+          alt="user"
+          className="w-full h-full object-contain cursor-pointer"
+        />
+      </div>
 
       <div>
         <h1 className="text-center text-4xl font-bold">
@@ -107,6 +107,7 @@ const Dashboard = () => {
           <span className="capitalize text-purple-600">{user.firstName}</span>{" "}
           👋
         </h1>
+      </div>
       </div>
     </div>
   );
