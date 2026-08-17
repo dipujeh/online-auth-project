@@ -23,9 +23,12 @@ const Dashboard = () => {
   greeting();
   const getData = async () => {
     try {
-      const response = await axios.get("https://online-auth-project.onrender.com/api/getdata", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://online-auth-project.onrender.com/api/getdata",
+        {
+          withCredentials: true,
+        },
+      );
       setUser(response.data);
     } catch (error) {
       console.log(error);
@@ -59,7 +62,7 @@ const Dashboard = () => {
           className="w-12 h-12 rounded-full border-2 bg-purple-600 border-amber-100  text-white flex justify-center items-center text-xl cursor-pointer"
           onClick={() => setOpen(!open)}
         >
-         {user.firstName[0]}
+          {user.firstName?.[0]}
         </div>
 
         {/* Dropdown */}
@@ -90,7 +93,11 @@ const Dashboard = () => {
       </div>
 
       <div>
-        <h1 className="text-center text-4xl font-bold">{greeting()}, <span className="capitalize text-purple-600">{user.firstName}</span> 👋</h1>
+        <h1 className="text-center text-4xl font-bold">
+          {greeting()},{" "}
+          <span className="capitalize text-purple-600">{user.firstName}</span>{" "}
+          👋
+        </h1>
       </div>
     </div>
   );
